@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>drag and drop</title>
+        <style>
+            #div1 {
+        width: 250px;
+        height: 250px;
+        padding: 10px; 
+        margin: 0px 10px 0px 0px;
+        border: 1px solid #aaaaaa; 
+        float: left;
+    }
+    #div2 {
+        width: 250px;
+        height: 250px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+        float: left;
+            }
+  </style>
+    
+    
+    <script>
+    function allowDrop(ev){
+       
+        ev.preventDefault();    
+            
+     }
+        
+    function drag(ev){
+        
+        ev.dataTransfer.setData("text",ev.target.id);
+        
+        
+    }
+        
+    function drop(ev){
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            
+        ev.target.appendChild(document.getElementById(data)); 
+           
+     }
+
+    </script>
+    </head>
+    <body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img id="imege" src=https://tistory2.daumcdn.net/tistory/4287294/attach/ab12d07ebbf34661a7d7d47ca025dccc
+    draggable="true" ondragstart="drag(event)"
+   width="250px" height="250px">
+    
+    </div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
